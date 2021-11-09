@@ -1,0 +1,19 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  position: relative;
+  display: flex;
+  margin: 0;
+}
+
+:root {
+  font: 16px/22px normal Tahoma, Helvatica, sans-serif;
+  line-height: 1.375;
+}
+
+#map {
+  flex: 1 1 0;
+}
