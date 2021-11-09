@@ -13,6 +13,7 @@ import {
 const contentPromise = new Promise((resolve) => {
   document.addEventListener('DOMContentLoaded', resolve);
 });
+
 const loader = new Loader({apiKey: process.env.API_KEY!, version: 'beta'});
 
 const pointA = {lat: 48.86267605556572, lng: 2.3190953037457054};
@@ -28,7 +29,6 @@ function main() {
   });
 
   const scene = new Scene();
-  scene.rotation.x = Math.PI / 2;
   scene.add(new AmbientLight(0xffffff, 0.25));
   const directionalLight = new DirectionalLight(0xffffff, 0.75);
   directionalLight.position.set(1, 5, 1);
