@@ -35,17 +35,25 @@ function main() {
   scene.add(directionalLight);
 
   const geometry = new BoxBufferGeometry(10, 10, 10);
-  const material = new MeshPhongMaterial();
-  material.color.set(0xff0000);
 
-  const boxA = new Mesh(geometry, material);
+  const materialA = new MeshPhongMaterial();
+  materialA.color.set(0xff0000);
+  const boxA = new Mesh(geometry, materialA);
   boxA.position.setY(5);
   scene.add(boxA);
 
-  const boxB = new Mesh(geometry, material);
+  const materialB = new MeshPhongMaterial();
+  materialB.color.set(0x0000ff);
+  const boxB = new Mesh(geometry, materialB);
   latLngToVector3Relative(pointB, pointA, boxB.position);
   boxB.position.setY(5);
   scene.add(boxB);
+
+  new google.maps.Marker({
+    position: pointB,
+    map,
+    title: 'point B',
+  });
 
   new ThreeJSOverlayView({anchor: {altitude: 0, ...pointA}, map, scene});
 }
